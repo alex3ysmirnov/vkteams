@@ -4,9 +4,9 @@ import logging.config
 from os import path
 from time import sleep
 import sys
-from bot.bot import Bot
-from bot.filter import Filter
-from bot.handler import HelpCommandHandler, UnknownCommandHandler, MessageHandler, FeedbackCommandHandler, \
+from vkteams.bot import Bot
+from vkteams.filter import Filter
+from vkteams.handler import HelpCommandHandler, UnknownCommandHandler, MessageHandler, FeedbackCommandHandler, \
     CommandHandler, NewChatMembersHandler, LeftChatMembersHandler, PinnedMessageHandler, UnPinnedMessageHandler, \
     EditedMessageHandler, DeletedMessageHandler, StartCommandHandler, BotButtonCommandHandler
 

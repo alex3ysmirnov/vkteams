@@ -1,5 +1,5 @@
-from bot.bot import Bot
-from bot.handler import MessageHandler
+from vkteams.bot import Bot
+from vkteams.handler import MessageHandler
 
 import logging.config
 

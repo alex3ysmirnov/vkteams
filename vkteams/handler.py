@@ -122,7 +122,7 @@ class StartCommandHandler(CommandHandler):
 
 class FeedbackCommandHandler(CommandHandler):
     def __init__(
-        self, target, message="Feedback from {source}: {message}", reply="Got it!", error_reply=None,
+        self, target, message="Feedback from {source}: {message}", reply="Sended to owner.", error_reply="Error on sending!",
         command="feedback", filters=None
     ):
         super(FeedbackCommandHandler, self).__init__(command=command, filters=filters, callback=self.message_cb)
@@ -133,16 +133,17 @@ class FeedbackCommandHandler(CommandHandler):
         self.error_reply = error_reply
 
     def message_cb(self, bot, event):
-        source = event.data['chat']['chatId']
+        source = event.message_author['userId']
+        source2 = event.data['chat']['chatId']
         feedback_text = event.data["text"].partition(" ")[2].strip()
 
         if feedback_text:
             bot.send_text(chat_id=self.target, text=self.message.format(source=source, message=feedback_text))
 
             if self.reply is not None:
-                bot.send_text(chat_id=source, text=self.reply)
+                bot.send_text(chat_id=source2, text=self.reply)
         elif self.error_reply is not None:
-            bot.send_text(chat_id=source, text=self.error_reply)
+            bot.send_text(chat_id=source2, text=self.error_reply)
 
 
 class UnknownCommandHandler(CommandHandler):

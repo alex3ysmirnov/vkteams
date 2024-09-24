@@ -1,5 +1,5 @@
 import pytest
-from bot.bot import Bot
+from vkteams.bot import Bot
 from threading import Thread
 
 import server

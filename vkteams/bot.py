@@ -185,13 +185,15 @@ class Bot(object):
         return response
 
     def self_get(self):
-        return self.http_session.get(
+        response = self.http_session.get(
             url="{}/self/get".format(self.api_base_url),
             params={
                 "token": self.token
             },
             timeout=self.timeout_s
         )
+        response_text = response.json()
+        return response_text
 
     def default_handler(self):
         def decorate(handler):
@@ -410,7 +412,7 @@ class Bot(object):
         )
 
     def get_chat_info(self, chat_id):
-        return self.http_session.get(
+        response = self.http_session.get(
             url="{}/chats/getInfo".format(self.api_base_url),
             params={
                 "token": self.token,
@@ -418,9 +420,11 @@ class Bot(object):
             },
             timeout=self.timeout_s
         )
+        response_text = response.json()
+        return response_text
 
     def get_chat_admins(self, chat_id):
-        return self.http_session.get(
+        response = self.http_session.get(
             url="{}/chats/getAdmins".format(self.api_base_url),
             params={
                 "token": self.token,
@@ -428,9 +432,11 @@ class Bot(object):
             },
             timeout=self.timeout_s
         )
+        response_text = response.json()
+        return response_text
 
     def get_chat_members(self, chat_id, cursor=None):
-        return self.http_session.get(
+        response = self.http_session.get(
             url="{}/chats/getMembers".format(self.api_base_url),
             params={
                 "token": self.token,
@@ -439,9 +445,11 @@ class Bot(object):
             },
             timeout=self.timeout_s
         )
+        response_text = response.json()
+        return response_text
 
     def get_chat_blocked_users(self, chat_id):
-        return self.http_session.get(
+        response = self.http_session.get(
             url="{}/chats/getBlockedUsers".format(self.api_base_url),
             params={
                 "token": self.token,
@@ -449,9 +457,11 @@ class Bot(object):
             },
             timeout=self.timeout_s
         )
+        response_text = response.json()
+        return response_text
 
     def get_chat_pending_users(self, chat_id):
-        return self.http_session.get(
+        response = self.http_session.get(
             url="{}/chats/getPendingUsers".format(self.api_base_url),
             params={
                 "token": self.token,
@@ -459,6 +469,8 @@ class Bot(object):
             },
             timeout=self.timeout_s
         )
+        response_text = response.json()
+        return response_text
 
     def chat_block_user(self, chat_id, user_id, del_last_messages=False):
         return self.http_session.get(
@@ -530,7 +542,7 @@ class Bot(object):
         )
 
     def get_file_info(self, file_id):
-        return self.http_session.get(
+        response = self.http_session.get(
             url="{}/files/getInfo".format(self.api_base_url),
             params={
                 "token": self.token,
@@ -538,6 +550,8 @@ class Bot(object):
             },
             timeout=self.timeout_s
         )
+        response_text = response.json()
+        return response_text
 
     def pin_message(self, chat_id, msg_id):
         return self.http_session.get(

@@ -3,7 +3,7 @@ from os import path
 
 from setuptools import setup, find_packages
 
-import bot
+import vkteams
 
 here = path.abspath(path.dirname(__file__))
 
@@ -19,14 +19,14 @@ def requirements():
 
 
 setup(
-    name="mailru-im-bot",
-    version=bot.__version__,
+    name="vkteams",
+    version=vkteams.__version__,
     description="Pure Python interface for Bot API. Bot cookbook for Humans.",
     long_description=long_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/mail-ru-im/bot-python",
-    author="ICQ LLC (Mail.Ru Group)",
-    author_email="support@icq.com",
+    url="https://github.com/alex3ysmirnov/vkteams",
+    author="alex3ysmirnov",
+    author_email="alex3ysmirnov@gmail.com",
     license="MIT",
     classifiers=[
         "Intended Audience :: Developers",
@@ -45,7 +45,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Operating System :: OS Independent"
     ],
-    keywords="mailru im bot api",
+    keywords="mailru im bot api postmaster alex3ysmirnov vkteams vk teams",
     packages=find_packages(exclude=["example"]),
     install_requires=requirements(),
     python_requires=">= 2.7, != 3.0.*, != 3.1.*, != 3.2.*, != 3.3.*",

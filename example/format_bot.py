@@ -1,6 +1,6 @@
-from bot.bot import Bot
-from bot.handler import MessageHandler
-from bot.types import Format
+from vkteams.bot import Bot
+from vkteams.handler import MessageHandler
+from vkteams.types import Format
 
 import logging.config
 
