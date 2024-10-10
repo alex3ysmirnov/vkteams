@@ -1,5 +1,8 @@
 <img src="logo_bot.png" width="100" height="100">
 
+# Полезная информация
+Нас развалит ВК окончательно 1 ноября. Библиотека прекратила свое существование и разработку. Мы мигрировали в ТамТам, за нас не переживайте.
+
 # VK Teams Bot API для Python
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
