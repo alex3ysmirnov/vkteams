@@ -21,7 +21,3 @@ git clone https://github.com/alex3ysmirnov/vkteams.git
 cd vkteams
 python setup.py install
 ```
-Установка с PyPi:
-```bash
-pip install --upgrade vkteams
-```
